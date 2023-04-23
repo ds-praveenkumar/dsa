@@ -1,25 +1,33 @@
-class LinkedList:
-    def __init__(self, value, next=None):
-        self.data = value
-        self.next = next
+class Node:
+    def __init__(self,data= None):
+        self.data  = data
+        self.next = None
     
     def __repr__(self) -> str:
         return f"{self.data}->"
 
+class LinkedList:
+    def __init__(self, head, next=None):
+        self.head = head
+        self.next = next
+    
+    def __repr__(self) -> str:
+        return f"{self.head}->"
+
 if __name__ =='__main__':
     print("linked list")
-    a = LinkedList(1)
-    b = LinkedList(2)
-    c = LinkedList(3)
-    d = LinkedList(4)
-    e = LinkedList(5)
+    a = Node()
+    b = Node(2)
+    c = Node(3)
+    d = Node(4)
+    e = Node(5)
 
     a.next = b
     b.next = c
     c.next = d
     d.next = e
-    i = LinkedList(0,a)
+    i = LinkedList(a)
 
-    while i.next != None:
-        print(i)
-        i = a
+    print( a )
+    print( i )
+    
